@@ -1,24 +1,44 @@
-# Noaccent
+# NoAccent
 
-TODO: Delete this and the text below, and describe your gem
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/noaccent`. To experiment with that code, run `bin/console` for an interactive prompt.
+NoAccent is a simple Ruby gem that helps in removing accents from text. It is particularly useful in handling strings with special characters.
 
 ## Installation
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
+Add this line to your application's Gemfile:
 
-Install the gem and add to the application's Gemfile by executing:
+```ruby
+gem 'noaccent'
+```
 
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+And then execute:
 
-If bundler is not being used to manage dependencies, install the gem by executing:
+```
+bundle install
+```
 
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+Or install it yourself as:
+
+```
+gem install noaccent
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+Using NoAccent is straightforward:
+
+```ruby
+require 'noaccent'
+
+puts NoAccent.cut("Ōsaka") # => "Osaka"
+puts "Ōsaka".cut_accent    # => "Osaka"
+```
+
+This gem is useful for removing accents from Vietnamese text:
+
+```ruby
+NoAccent.cut 'Hoàng Sa Trường Sa là của Việt Nam!'
+# => Hoang Sa Truong Sa la cua Viet Nam!
+```
 
 ## Development
 
@@ -28,12 +48,8 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/noaccent. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/noaccent/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/YutoYasunaga/noaccent.
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the Noaccent project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/noaccent/blob/main/CODE_OF_CONDUCT.md).
